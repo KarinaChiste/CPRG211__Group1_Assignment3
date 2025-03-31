@@ -1,4 +1,4 @@
-namespace Test_Assignment_3_1
+namespace TestProject1
 {
     public class Tests
     {
