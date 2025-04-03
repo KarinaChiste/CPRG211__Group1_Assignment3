@@ -1,12 +1,14 @@
-﻿using Assignment_3_skeleton;
+﻿//using Assignment_3_skeleton;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Test_Assignment_3
+using CPRG211__Group1_Assignment3;
+//CPRG211__Group1_Assignment3
+namespace Assignment3Tests
 {
     public class LinkedListTests
     {
@@ -29,8 +31,8 @@ namespace Test_Assignment_3
         [Test]
         public void TestIsEmpty()
         {
-            Assert.True(this.linkedList.IsEmpty());
-            Assert.Equals(0, this.linkedList.Size());
+            Assert.IsTrue(this.linkedList.IsEmpty());
+            Assert.AreEqual(0, this.linkedList.Size());
         }
 
         //Tests appending elements to the linked list.
@@ -49,22 +51,22 @@ namespace Test_Assignment_3
              */
 
             // Test the linked list is not empty.
-            Assert.False(this.linkedList.IsEmpty());
+            Assert.IsFalse(this.linkedList.IsEmpty());
 
             // Test the size is 4
-            Assert.Equals(4, this.linkedList.Size());
+            Assert.AreEqual(4, this.linkedList.Size());
 
             // Test the first node value is a
-            Assert.Equals("a", this.linkedList.Retrieve(0));
+            Assert.AreEqual("a", this.linkedList.Retrieve(0));
 
             // Test the second node value is b
-            Assert.Equals("b", this.linkedList.Retrieve(1));
+            Assert.AreEqual("b", this.linkedList.Retrieve(1));
 
             // Test the third node value is c
-            Assert.Equals("c", this.linkedList.Retrieve(2));
+            Assert.AreEqual("c", this.linkedList.Retrieve(2));
 
             // Test the fourth node value is d
-            Assert.Equals("d", this.linkedList.Retrieve(3));
+            Assert.AreEqual("d", this.linkedList.Retrieve(3));
         }
 
         //Tests prepending nodes to linked list.
@@ -83,22 +85,22 @@ namespace Test_Assignment_3
              */
 
             // Test the linked list is not empty.
-            Assert.False(this.linkedList.IsEmpty());
+            Assert.IsFalse(this.linkedList.IsEmpty());
 
             // Test the size is 4
-            Assert.Equals(4, this.linkedList.Size());
+            Assert.AreEqual(4, this.linkedList.Size());
 
             // Test the first node value is a
-            Assert.Equals("d", this.linkedList.Retrieve(0));
+            Assert.AreEqual("d", this.linkedList.Retrieve(0));
 
             // Test the second node value is b
-            Assert.Equals("c", this.linkedList.Retrieve(1));
+            Assert.AreEqual("c", this.linkedList.Retrieve(1));
 
             // Test the third node value is c
-            Assert.Equals("b", this.linkedList.Retrieve(2));
+            Assert.AreEqual("b", this.linkedList.Retrieve(2));
 
             // Test the fourth node value is d
-            Assert.Equals("a", this.linkedList.Retrieve(3));
+            Assert.AreEqual("a", this.linkedList.Retrieve(3));
         }
 
         //Tests inserting node at valid index.
@@ -119,25 +121,25 @@ namespace Test_Assignment_3
              */
 
             // Test the linked list is not empty.
-            Assert.False(this.linkedList.IsEmpty());
+            Assert.IsFalse(this.linkedList.IsEmpty());
 
             // Test the size is 4
-            Assert.Equals(5, this.linkedList.Size());
+            Assert.AreEqual(5, this.linkedList.Size());
 
             // Test the first node value is a
-            Assert.Equals("a", this.linkedList.Retrieve(0));
+            Assert.AreEqual("a", this.linkedList.Retrieve(0));
 
             // Test the second node value is b
-            Assert.Equals("b", this.linkedList.Retrieve(1));
+            Assert.AreEqual("b", this.linkedList.Retrieve(1));
 
             // Test the third node value is e
-            Assert.Equals("e", this.linkedList.Retrieve(2));
+            Assert.AreEqual("e", this.linkedList.Retrieve(2));
 
             // Test the third node value is c
-            Assert.Equals("c", this.linkedList.Retrieve(3));
+            Assert.AreEqual("c", this.linkedList.Retrieve(3));
 
             // Test the fourth node value is d
-            Assert.Equals("d", this.linkedList.Retrieve(4));
+            Assert.AreEqual("d", this.linkedList.Retrieve(4));
         }
 
         //Tests replacing existing nodes data.
@@ -158,22 +160,22 @@ namespace Test_Assignment_3
              */
 
             // Test the linked list is not empty.
-            Assert.False(this.linkedList.IsEmpty());
+            Assert.IsFalse(this.linkedList.IsEmpty());
 
             // Test the size is 4
-            Assert.Equals(4, this.linkedList.Size());
+            Assert.AreEqual(4, this.linkedList.Size());
 
             // Test the first node value is a
-            Assert.Equals("a", this.linkedList.Retrieve(0));
+            Assert.AreEqual("a", this.linkedList.Retrieve(0));
 
             // Test the second node value is b
-            Assert.Equals("b", this.linkedList.Retrieve(1));
+            Assert.AreEqual("b", this.linkedList.Retrieve(1));
 
             // Test the third node value is e
-            Assert.Equals("e", this.linkedList.Retrieve(2));
+            Assert.AreEqual("e", this.linkedList.Retrieve(2));
 
             // Test the fourth node value is d
-            Assert.Equals("d", this.linkedList.Retrieve(3));
+            Assert.AreEqual("d", this.linkedList.Retrieve(3));
         }
 
         //Tests deleting node from linked list.
@@ -194,19 +196,19 @@ namespace Test_Assignment_3
              */
 
             // Test the linked list is not empty.
-            Assert.False(this.linkedList.IsEmpty());
+            Assert.IsFalse(this.linkedList.IsEmpty());
 
             // Test the size is 4
-            Assert.Equals(3, this.linkedList.Size());
+            Assert.AreEqual(3, this.linkedList.Size());
 
             // Test the first node value is a
-            Assert.Equals("a", this.linkedList.Retrieve(0));
+            Assert.AreEqual("a", this.linkedList.Retrieve(0));
 
             // Test the second node value is b
-            Assert.Equals("b", this.linkedList.Retrieve(1));
+            Assert.AreEqual("b", this.linkedList.Retrieve(1));
 
             // Test the fourth node value is d
-            Assert.Equals("d", this.linkedList.Retrieve(2));
+            Assert.AreEqual("d", this.linkedList.Retrieve(2));
         }
 
         //Tests finding and retrieving node in linked list.
@@ -225,13 +227,13 @@ namespace Test_Assignment_3
              */
 
             bool contains = this.linkedList.Contains("b");
-            Assert.True(contains);
+            Assert.IsTrue(contains);
 
             int index = this.linkedList.IndexOf("b");
-            Assert.Equals(1, index);
+            Assert.AreEqual(1, index);
 
             string value = (string)this.linkedList.Retrieve(1);
-            Assert.Equals("b", value);
+            Assert.AreEqual("b", value);
         }
     }
 }
