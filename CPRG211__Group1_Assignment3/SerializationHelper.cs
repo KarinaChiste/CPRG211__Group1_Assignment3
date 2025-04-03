@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace Assignment_3_skeleton
+namespace CPRG211__Group1_Assignment3
 {
     public static class SerializationHelper
     {

@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Assignment_3_skeleton
-{
+namespace CPRG211__Group1_Assignment3 { 
     public class SLL : LinkedListADT
     {
         private Node head;
@@ -75,6 +74,7 @@ namespace Assignment_3_skeleton
                     }
                     else
                     {
+                        //tempNode = tempNode.Next;
                         tempNode.Next = tempNode.Next.Next;
                         return;
                     }

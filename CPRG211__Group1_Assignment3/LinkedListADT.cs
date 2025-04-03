@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 
 //test comment
-namespace Assignment_3_skeleton
+namespace CPRG211__Group1_Assignment3
 {
     //test comment
     public interface LinkedListADT
