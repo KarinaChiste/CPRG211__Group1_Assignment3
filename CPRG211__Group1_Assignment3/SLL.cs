@@ -311,6 +311,16 @@ namespace CPRG211__Group1_Assignment3 {
             return false;
         }
 
-
+        public Node[] returnAsArray()
+        {
+            Node[] array = new Node[ListSize];
+            Node current = head;
+            for (int i = 0; i < ListSize; i++)
+            {
+                array[i] = current;
+                current = current.Next;
+            }
+            return array;
+        }
     }
 }
