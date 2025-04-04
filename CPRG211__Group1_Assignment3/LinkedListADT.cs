@@ -63,5 +63,6 @@ namespace CPRG211__Group1_Assignment3
         //parameter data Data object to search for.
         //return True if element exists with value.
         bool Contains(Object data);
+        void ReverseNodes();
     }
 }

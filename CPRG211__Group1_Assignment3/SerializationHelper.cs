@@ -27,5 +27,18 @@ namespace CPRG211__Group1_Assignment3
                 return (List<User>)serializer.ReadObject(stream);
             }
         }
+
+        public static void OrderUsers (List<User> users)
+        {
+            // https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.sort?view=net-9.0 used the sort method as defined here
+            users.Sort(delegate (User x, User y)
+            {
+                return x.Name.CompareTo(y.Name);
+            });
+
+
+            
+        }
+
     }
 }
