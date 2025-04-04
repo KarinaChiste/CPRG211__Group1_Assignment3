@@ -68,5 +68,7 @@ namespace CPRG211__Group1_Assignment3
 
         void ReverseNodes();
 
+        SLL DivideIndex(int index);
+
     }
 }

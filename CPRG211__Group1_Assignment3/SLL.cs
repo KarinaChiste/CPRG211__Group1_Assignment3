@@ -344,6 +344,31 @@ namespace CPRG211__Group1_Assignment3 {
             Head = tempNode;
         }
 
+        public SLL DivideIndex(int index)
+        {
+            SLL listTwo = new SLL();
+            Node current = head;
+            int count = 0;
+
+            if(index < 0 || index > listSize)
+            {
+                Console.WriteLine(Exceptions.IndexOutOfRangeException());
+            }
+
+            while(count < index - 1 && index != null)
+            {
+                current = current.Next;
+                count = count + 1;
+            }
+
+            listTwo.Head = current.Next;
+            listTwo.Tail = tail;
+            current.Next = null;
+            current = tail;
+
+            return listTwo;
+        }
+
 
     }
 }
