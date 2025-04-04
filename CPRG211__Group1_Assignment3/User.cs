@@ -62,5 +62,7 @@ namespace CPRG211__Group1_Assignment3
 
             return Id == other.Id && Id.Equals(other.Name) && Id.Equals(other.Email);
         }
+
+     
     }
 }

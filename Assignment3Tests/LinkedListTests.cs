@@ -235,5 +235,17 @@ namespace Assignment3Tests
             string value = (string)this.linkedList.Retrieve(1);
             Assert.AreEqual("b", value);
         }
+        [Test]
+        public void TestReverseNodes()
+        {
+            this.linkedList.Append("a");
+            this.linkedList.Append("b");
+            this.linkedList.Append("c");
+            this.linkedList.Append("d");
+
+            this.linkedList.ReverseNodes();
+            //string newHead = this.linkedList.NewHead;
+            Assert.AreEqual("d", this.linkedList.Retrieve(0));
+        }
     }
 }
