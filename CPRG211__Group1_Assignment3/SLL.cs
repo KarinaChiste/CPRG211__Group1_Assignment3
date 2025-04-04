@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ namespace CPRG211__Group1_Assignment3 {
         private Node head;
         private Node tail;
         private int listSize;
+        //private Node newHead; 
+        //private Node newTail; 
 
         public Node Head { get => head; set => head = value; }
         public Node Tail { get => tail; set => tail = value; }
@@ -18,9 +21,11 @@ namespace CPRG211__Group1_Assignment3 {
 
         public void Append(object data)
         {
+
             listSize++;
             if (FixListNull(data) == true)
             {
+                
                 return;
             }
             tail.Next = new Node(data);
@@ -31,6 +36,7 @@ namespace CPRG211__Group1_Assignment3 {
         {
             head = null;
             tail = null;
+            listSize = 0;
             Console.WriteLine("List cleared");
         }
 
@@ -51,6 +57,7 @@ namespace CPRG211__Group1_Assignment3 {
 
         public void Delete(int targetIndex)
         {
+            listSize--;
             if (CheckListNull() is true)
             {
                 return;
@@ -322,5 +329,21 @@ namespace CPRG211__Group1_Assignment3 {
             }
             return array;
         }
+
+        public void ReverseNodes()
+        {
+            Node tempNode = Head;
+            Tail = Head;
+            while(tempNode.Next != null)
+            {
+              
+                Prepend(tempNode);
+                
+                tempNode = tempNode.Next;
+            }
+            Head = tempNode;
+        }
+
+
     }
 }

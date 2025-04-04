@@ -238,13 +238,26 @@ namespace Assignment3Tests
         }
         [Test]
         public void TestReturnAsArray()
-        {
+  {
             this.linkedList.Append("a");
             this.linkedList.Append("b");
             this.linkedList.Append("c");
             this.linkedList.Append("d");
             Node[] nodes = this.linkedList.returnAsArray();
             Assert.AreEqual(nodes[2].Data, "c");
+   }
+      
+        [Test]      
+        public void TestReverseNodes()
+        {
+            this.linkedList.Append("a");
+            this.linkedList.Append("b");
+            this.linkedList.Append("c");
+            this.linkedList.Append("d");
+
+           this.linkedList.ReverseNodes();
+            //string newHead = this.linkedList.NewHead;
+            Assert.AreEqual("d", this.linkedList.Retrieve(0));
         }
     }
 }

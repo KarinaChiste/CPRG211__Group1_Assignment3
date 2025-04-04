@@ -65,5 +65,8 @@ namespace CPRG211__Group1_Assignment3
         bool Contains(Object data);
 
         Node[] returnAsArray();
+
+        void ReverseNodes();
+
     }
 }
