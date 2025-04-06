@@ -60,7 +60,7 @@ namespace CPRG211__Group1_Assignment3 {
             // added exception for when the target index is negative or larger than/equal to listSize
             if (targetIndex < 0 || targetIndex >= listSize)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new IndexOutOfRangeException();
             }
 
             listSize--;
@@ -240,7 +240,10 @@ namespace CPRG211__Group1_Assignment3 {
                 }
                 index++;
             }
-            return -1;
+
+            // changed it to return null instead of -1 
+            return null;
+            //return -1;
         }
 
         public int Size()
