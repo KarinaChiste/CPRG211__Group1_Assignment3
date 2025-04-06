@@ -118,6 +118,12 @@ namespace CPRG211__Group1_Assignment3 {
 
         public void Insert(object data, int targetIndex)
         {
+            // added exception for when the target index is negative or larger than to listSize
+            if (targetIndex < 0 || targetIndex > listSize)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
             listSize++;
             if (targetIndex == 0)
             {
@@ -183,6 +189,12 @@ namespace CPRG211__Group1_Assignment3 {
 
         public void Replace(object data, int targetIndex)
         {
+            // added exception for when the target index is negative or larger than/equal to listSize
+            if (targetIndex < 0 || targetIndex >= listSize)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
             if (CheckListNull() is true)
             {
                 return;
@@ -216,6 +228,12 @@ namespace CPRG211__Group1_Assignment3 {
 
         public object Retrieve(int targetIndex)
         {
+            // added exception for when the target index is negative or larger than/equal to listSize
+            if (targetIndex < 0 || targetIndex >= listSize)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
             if (CheckListNull() is true)
             {
                 return null;
