@@ -57,12 +57,19 @@ namespace CPRG211__Group1_Assignment3 {
 
         public void Delete(int targetIndex)
         {
+            // added exception for when the target index is negative or larger than/equal to listSize
+            if (targetIndex < 0 || targetIndex >= listSize)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
             listSize--;
             if (CheckListNull() is true)
             {
                 return;
             }
             int index = 0;
+
             for (Node tempNode = head; tempNode != null; tempNode = tempNode.Next)
             {
                 if (targetIndex == 0)
