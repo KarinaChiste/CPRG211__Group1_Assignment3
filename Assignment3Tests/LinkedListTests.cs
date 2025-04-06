@@ -305,24 +305,5 @@ namespace Assignment3Tests
             Assert.AreEqual("e", this.linkedList.Retrieve(4));
         }
 
-
-
-        //// create test lists
-        //SLL testList1 = new SLL();
-        //testList1.Append("a");
-        //testList1.Append("b");
-        //testList1.Append("c");
-
-        //SLL testList2 = new SLL();
-        //testList2.Append("d");
-        //testList2.Append("e");
-
-        //SLL testList3 = new SLL();
-
-        //SLL testList4 = new SLL();
-        //testList4.Append("f");
-
-        // join all test lists
-        // SLL linkedList = SLL.JoinLists(testList1, testList2, testList3, testList4);
     }
 }
