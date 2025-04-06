@@ -394,6 +394,9 @@ namespace CPRG211__Group1_Assignment3 {
             current.Next = null;
             current = tail;
 
+            listTwo.ListSize = listSize - index;
+            listSize = index;
+
             return listTwo;
         }
 
