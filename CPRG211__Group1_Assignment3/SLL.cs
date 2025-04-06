@@ -369,6 +369,27 @@ namespace CPRG211__Group1_Assignment3 {
             return listTwo;
         }
 
+        // method to join two or more linked lists together to create a single linked list
+        public static SLL JoinLists(params SLL[] lists)
+        {
+            SLL combinedList = new SLL();
+
+            foreach (SLL list in lists)
+            {
+                if (list == null || list.IsEmpty())
+                    continue;
+
+                Node current = list.head;
+
+                while (current != null)
+                {
+                    combinedList.Append(current.Data);
+                    current = current.Next;
+                }
+            }
+
+            return combinedList;
+        }
 
     }
 }
