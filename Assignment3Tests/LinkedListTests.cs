@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using CPRG211__Group1_Assignment3;
+using NUnit.Framework;
+using System.Diagnostics;
 //CPRG211__Group1_Assignment3
 namespace Assignment3Tests
 {
@@ -235,7 +237,19 @@ namespace Assignment3Tests
             string value = (string)this.linkedList.Retrieve(1);
             Assert.AreEqual("b", value);
         }
+
         [Test]
+        public void TestReturnAsArray()
+  {
+            this.linkedList.Append("a");
+            this.linkedList.Append("b");
+            this.linkedList.Append("c");
+            this.linkedList.Append("d");
+            Node[] nodes = this.linkedList.returnAsArray();
+            Assert.AreEqual(nodes[2].Data, "c");
+   }
+      
+        [Test]      
         public void TestReverseNodes()
         {
             this.linkedList.Append("a");
@@ -243,9 +257,53 @@ namespace Assignment3Tests
             this.linkedList.Append("c");
             this.linkedList.Append("d");
 
-            this.linkedList.ReverseNodes();
+           this.linkedList.ReverseNodes();
             //string newHead = this.linkedList.NewHead;
             Assert.AreEqual("d", this.linkedList.Retrieve(0));
         }
+
+        [Test]
+        public void TestDivideIndex()
+        {
+            this.linkedList.Append("a");
+            this.linkedList.Append("b");
+            this.linkedList.Append("c");
+            this.linkedList.Append("d");
+            this.linkedList.Append("e");
+            LinkedListADT listTwo = this.linkedList.DivideIndex(3);
+
+            Assert.AreEqual("a", this.linkedList.Retrieve(0));
+            Assert.AreEqual("b", this.linkedList.Retrieve(1));
+            Assert.AreEqual("c", this.linkedList.Retrieve(2));
+            Assert.AreEqual("d", listTwo.Retrieve(0));
+            Assert.AreEqual("e", listTwo.Retrieve(1));
+        }
+
+        // test Joinlists method
+        [Test]
+        public void TestJoinlists()
+        {
+            // create test lists
+            SLL testList1 = new SLL();
+            testList1.Append("a");
+            testList1.Append("b");
+            testList1.Append("c");
+
+            SLL testList2 = new SLL();
+            testList2.Append("d");
+            testList2.Append("e");
+
+            SLL testList3 = new SLL();
+
+            this.linkedList = SLL.JoinLists(testList1, testList2, testList3);
+
+            // check that values in joined test list match expected output
+            Assert.AreEqual("a", this.linkedList.Retrieve(0));
+            Assert.AreEqual("b", this.linkedList.Retrieve(1));
+            Assert.AreEqual("c", this.linkedList.Retrieve(2));
+            Assert.AreEqual("d", this.linkedList.Retrieve(3));
+            Assert.AreEqual("e", this.linkedList.Retrieve(4));
+        }
+
     }
 }

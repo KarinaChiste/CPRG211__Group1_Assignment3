@@ -71,7 +71,13 @@ namespace CPRG211__Group1_Assignment3
             list.Size();
             list.PrintData();
 
-
+            //Console.WriteLine("\nArray");
+            //Node[] nodes = list.returnAsArray();
+            //for (int i = 0; i < nodes.Length; i++)
+            //{
+            //    Console.WriteLine(nodes[i].Data);
+            //}
+            //Console.WriteLine("\n/Array");
 
             Console.ReadKey();
         }
