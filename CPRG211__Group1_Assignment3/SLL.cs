@@ -57,12 +57,19 @@ namespace CPRG211__Group1_Assignment3 {
 
         public void Delete(int targetIndex)
         {
+            // added exception for when the target index is negative or larger than/equal to listSize
+            if (targetIndex < 0 || targetIndex >= listSize)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
             listSize--;
             if (CheckListNull() is true)
             {
                 return;
             }
             int index = 0;
+
             for (Node tempNode = head; tempNode != null; tempNode = tempNode.Next)
             {
                 if (targetIndex == 0)
@@ -111,6 +118,12 @@ namespace CPRG211__Group1_Assignment3 {
 
         public void Insert(object data, int targetIndex)
         {
+            // added exception for when the target index is negative or larger than to listSize
+            if (targetIndex < 0 || targetIndex > listSize)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
             listSize++;
             if (targetIndex == 0)
             {
@@ -176,6 +189,12 @@ namespace CPRG211__Group1_Assignment3 {
 
         public void Replace(object data, int targetIndex)
         {
+            // added exception for when the target index is negative or larger than/equal to listSize
+            if (targetIndex < 0 || targetIndex >= listSize)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
             if (CheckListNull() is true)
             {
                 return;
@@ -209,6 +228,12 @@ namespace CPRG211__Group1_Assignment3 {
 
         public object Retrieve(int targetIndex)
         {
+            // added exception for when the target index is negative or larger than/equal to listSize
+            if (targetIndex < 0 || targetIndex >= listSize)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
             if (CheckListNull() is true)
             {
                 return null;
@@ -233,7 +258,10 @@ namespace CPRG211__Group1_Assignment3 {
                 }
                 index++;
             }
-            return -1;
+
+            // changed it to return null instead of -1 
+            return null;
+            //return -1;
         }
 
         public int Size()
@@ -366,9 +394,33 @@ namespace CPRG211__Group1_Assignment3 {
             current.Next = null;
             current = tail;
 
+            listTwo.ListSize = listSize - index;
+            listSize = index;
+
             return listTwo;
         }
 
+        // method to join two or more linked lists together to create a single linked list
+        public static SLL JoinLists(params SLL[] lists)
+        {
+            SLL combinedList = new SLL();
+
+            foreach (SLL list in lists)
+            {
+                if (list == null || list.IsEmpty())
+                    continue;
+
+                Node current = list.head;
+
+                while (current != null)
+                {
+                    combinedList.Append(current.Data);
+                    current = current.Next;
+                }
+            }
+
+            return combinedList;
+        }
 
     }
 }
