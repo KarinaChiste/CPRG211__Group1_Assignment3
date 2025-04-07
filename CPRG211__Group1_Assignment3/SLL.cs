@@ -19,6 +19,7 @@ namespace CPRG211__Group1_Assignment3 {
         public Node Tail { get => tail; set => tail = value; }
         public int ListSize { get => listSize; set => listSize = value; }
 
+
         public void Append(object data)
         {
 
@@ -264,7 +265,7 @@ namespace CPRG211__Group1_Assignment3 {
             //return -1;
         }
 
-        public int Size()
+        int LinkedListADT.Size()
         {
             if (head is null)
             {
@@ -392,8 +393,9 @@ namespace CPRG211__Group1_Assignment3 {
             listTwo.Head = current.Next;
             listTwo.Tail = tail;
             current.Next = null;
-            current = tail;
-
+            //current = tail;
+            Tail = current;
+            
             listTwo.ListSize = listSize - index;
             listSize = index;
 

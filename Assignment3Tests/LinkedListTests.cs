@@ -275,8 +275,10 @@ namespace Assignment3Tests
             Assert.AreEqual("a", this.linkedList.Retrieve(0));
             Assert.AreEqual("b", this.linkedList.Retrieve(1));
             Assert.AreEqual("c", this.linkedList.Retrieve(2));
+            Assert.AreEqual(3, this.linkedList.Size());
             Assert.AreEqual("d", listTwo.Retrieve(0));
             Assert.AreEqual("e", listTwo.Retrieve(1));
+            Assert.AreEqual(2, listTwo.Size());
         }
 
         // test Joinlists method

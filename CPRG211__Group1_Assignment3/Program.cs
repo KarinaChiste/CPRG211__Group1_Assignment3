@@ -68,7 +68,7 @@ namespace CPRG211__Group1_Assignment3
             //list.PrintData();
 
             Console.WriteLine("Function [Size]");
-            list.Size();
+            ((LinkedListADT)list).Size();
             list.PrintData();
 
             //Console.WriteLine("\nArray");
